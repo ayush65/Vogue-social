@@ -155,10 +155,10 @@ const SignUpForm: React.FC = () => {
         <button type="submit" className="signup-form__button">
           Sign Up
         </button>
-        <div className="display-flex">
+        <Link to="/login" className="display-flex logout-btn margin-top">
           <p> Don't have an account ?</p>
-          <Link to="/login">Login</Link>
-        </div>
+          <p>Login</p>
+        </Link>
       </form>
     </div>
   );

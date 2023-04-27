@@ -131,7 +131,7 @@ function Login({ loginState, setLoginState }: Login) {
           Login
         </button>
         <button
-          className="logout-btn"
+          className="logout-btn margin-top"
           onClick={() => {
             setUsername("ayush@gmail.com");
             setPassword("password");
@@ -139,10 +139,13 @@ function Login({ loginState, setLoginState }: Login) {
         >
           Login With Test Credentials{" "}
         </button>
-        <div className="display-flex">
-          <p> Don't have an account ?</p>
-          <Link to="/signup">Signup</Link>
-        </div>
+        <Link
+          to="/signup"
+          className="display-flex logout-btn margin-top  link-div"
+        >
+          <p> Don't have an account ? </p>
+          <p className="link-btn">Signup</p>
+        </Link>
       </form>
     </div>
   );

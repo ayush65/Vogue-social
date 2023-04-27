@@ -19,6 +19,22 @@
   border: 1px solid #ccc;
   border-radius: 5px;
 }
+.link-btn {
+  text-decoration: none;
+  text-align: center;
+  margin-left: 0.5rem;
+}
+
+.link-div {
+  padding: 10px;
+  margin-top: 0.5rem;
+  border-radius: 10px;
+  background-color: transparent;
+}
+.margin-top {
+  margin-top: 0.5rem;
+  text-decoration: none;
+}
 
 .form-group {
   display: flex;
