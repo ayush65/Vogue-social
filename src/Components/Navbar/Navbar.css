@@ -1,0 +1,136 @@
+.navbar {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2rem;
+  text-align: center;
+  width: 100%;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #0d1117;
+}
+
+.navbar-logo {
+  justify-self: start;
+  font-family: "Courier New", Courier, monospace;
+  margin-left: 20px;
+  cursor: pointer;
+  font-size: 1.9rem;
+  margin-left: 4rem;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.navbar-dark {
+  color: white;
+  background-color: #3d2b44;
+  text-decoration: none;
+}
+
+.navbar-light {
+  color: #333;
+  background-color: white;
+}
+
+.navbar-hamburger {
+  font-size: 2rem;
+  margin-left: 20px;
+  cursor: pointer;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-menu {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  gap: 20px;
+  list-style: none;
+  text-align: center;
+  width: 70vw;
+  justify-content: end;
+  margin-right: 2rem;
+  z-index: 200;
+}
+
+.nav-image-logo {
+  width: 10%;
+}
+
+.nav-links {
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  position: relative;
+  list-style: none;
+  text-decoration: none;
+  color: inherit;
+  background-color: none;
+}
+
+.nav-links:hover {
+  background-color: #69908e;
+  color: white;
+  border-radius: 4px;
+  transition: all 0.2s ease-out;
+}
+
+.nav-links-container {
+  display: flex;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.login-button {
+  text-decoration: none;
+  padding: 1rem;
+}
+
+.light-mode {
+  background-color: #e5e4e2;
+  color: #333;
+}
+
+.logout-btn {
+  background-color: #fff;
+  color: #333;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid #333;
+}
+
+.logout-btn:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.dark-mode {
+  color: white;
+  background-color: #0d1117;
+}
+
+.nav-buttons {
+  display: flex;
+}
+
+@media (max-width: 960px) {
+  .navbar {
+    position: relative;
+    z-index: 5;
+  }
+  .navbar-logo {
+    /* display: none; */
+    margin-left: -1rem;
+    font-size: 1.5rem;
+  }
+
+  .signin-button,
+  .login-button {
+    width: 6rem;
+  }
+  .navbar-logo {
+    display: none;
+  }
+}

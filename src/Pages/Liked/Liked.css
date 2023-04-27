@@ -1,0 +1,11 @@
+.liked-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-around;
+}
+.liked-posts {
+  width: 350px;
+  display: flex;
+  justify-content: center;
+  margin: 2rem;
+}

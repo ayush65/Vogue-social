@@ -1,0 +1,27 @@
+.sidebar {
+  position: absolute;
+  top: 110px;
+  width: 15rem;
+  height: 90vh;
+  z-index: 600;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sidebar-link {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding: 10px;
+  text-decoration: none;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  transition: color 0.2s ease-in-out;
+}
+
+.sidebar-link:hover {
+  color: #333;
+  background-color: #f0f0f0;
+  border-bottom: 1px solid #333;
+}

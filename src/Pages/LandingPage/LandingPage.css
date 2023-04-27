@@ -1,0 +1,43 @@
+.landingpage-img {
+  width: 100%;
+  margin-top: 3rem;
+  border-radius: 30px;
+}
+.landingpage-div {
+  display: flex;
+}
+.landingpage-div1 {
+  width: 70vw;
+  display: flex;
+  justify-content: center;
+  padding: 3rem;
+}
+.landingpage-div2 {
+  width: 30vw;
+}
+.landing-heading {
+  font-family: Impact;
+  font-size: 4rem;
+}
+.landing-page-btn {
+  padding: 1rem 1rem;
+  border-radius: 25px;
+  font-size: 1rem;
+  border: 1px solid black;
+  text-decoration: none;
+  color: white;
+  background-color: #333;
+}
+.link-btn-explore {
+  margin-top: 3rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .landingpage-div {
+    display: flex;
+    flex-direction: column;
+  }
+  .landingpage-div2 {
+    width: 100vw;
+  }
+}

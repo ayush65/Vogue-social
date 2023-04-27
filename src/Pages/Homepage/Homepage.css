@@ -1,0 +1,11 @@
+.homepage-container {
+  display: flex;
+  justify-content: space-around;
+}
+@media only screen and (max-width: 600px) {
+  .homepage-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+}
