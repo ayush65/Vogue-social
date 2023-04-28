@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./Sidebar.css";
 import { Link, Navigate } from "react-router-dom";
-import { AiFillHome } from "react-icons/ai";
+import { AiFillHome, AiFillLike } from "react-icons/ai";
 import { FaBookmark, FaUser } from "react-icons/fa";
+import { BiLogIn } from "react-icons/bi";
+import { MdAccountBox } from "react-icons/md";
 
 interface UserDetailsProps {
   mode: string;
@@ -64,7 +66,7 @@ const Sidebar = ({ mode, loginState, setLoginState }: UserDetailsProps) => {
             }
           >
             {" "}
-            <FaBookmark /> Liked
+            <AiFillLike /> Liked
           </Link>
         </div>
       ) : (
@@ -79,7 +81,7 @@ const Sidebar = ({ mode, loginState, setLoginState }: UserDetailsProps) => {
             }
           >
             {" "}
-            <FaBookmark /> Login
+            <BiLogIn /> Login
           </Link>
           <Link
             to="/signup"
@@ -90,7 +92,7 @@ const Sidebar = ({ mode, loginState, setLoginState }: UserDetailsProps) => {
             }
           >
             {" "}
-            <FaBookmark /> Signup
+            <MdAccountBox /> Signup
           </Link>
         </div>
       )}

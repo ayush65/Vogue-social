@@ -62,7 +62,7 @@ const Liked = ({
         </div>
 
         <div>
-          <h1 className="liked-posts">Liked Posts</h1>
+          <h2 className="liked-posts">Liked Posts</h2>
           {likedArray.length === 0 && <h3>No Liked Posts yet</h3>}
           <PostsCard array={likedArray} setArray={setLikedArray} mode={mode} />
         </div>
