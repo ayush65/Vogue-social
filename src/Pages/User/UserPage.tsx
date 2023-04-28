@@ -92,7 +92,7 @@ const UserPage = ({
     }
   };
 
-  const notify1 = () => toast("User Data Updated");
+  const notify1 = () => toast("User Data Upda");
 
   const [name, setName] = useState(user.name);
   const [bio, setBio] = useState(user.bio);
@@ -171,7 +171,7 @@ const UserPage = ({
             </div>
           </div>
           <div className="user-post-container">
-            <PostsCard array={array} mode={mode} setArray={setArray} />
+            <PostsCard array={userPost} mode={mode} setArray={setArray} />
           </div>
         </div>
       </div>
