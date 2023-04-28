@@ -63,6 +63,7 @@ const Bookmark = ({
         <h2 className="liked-posts">Bookmarked Posts</h2>
         {bookmarkArray.length === 0 && <h3>No Bookmarked Posts yet</h3>}
         <PostsCard
+          user={user}
           array={bookmarkArray}
           setArray={setBookmarkArray}
           mode={mode}
