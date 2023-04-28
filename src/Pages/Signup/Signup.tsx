@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./Signup.css";
 import { Link, useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export interface Notes {
   name: string;
@@ -72,6 +74,7 @@ const SignUpForm: React.FC = () => {
       },
     ]);
     console.log(userArray);
+    notify1();
   };
   useEffect(() => {
     setUserArray([
@@ -83,6 +86,8 @@ const SignUpForm: React.FC = () => {
       },
     ]);
   }, []);
+
+  const notify1 = () => toast("User Signup Success Proceed To the Login Page");
 
   useEffect(() => {
     const userObj = JSON.stringify(userArray);
@@ -160,6 +165,7 @@ const SignUpForm: React.FC = () => {
           <p>Login</p>
         </Link>
       </form>
+      <ToastContainer />
     </div>
   );
 };

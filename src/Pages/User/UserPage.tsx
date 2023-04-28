@@ -7,6 +7,8 @@ import OtherAccounts from "../../Components/OtherAccounts/OtherAccounts";
 import PostsCard from "../../Components/PostsCard/PostsCard";
 import { Navigate } from "react-router-dom";
 import UserDetails from "../../Components/UserDetails/UserDetails";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 interface UserDetailsProps {
   mode: string;
@@ -90,6 +92,8 @@ const UserPage = ({
     }
   };
 
+  const notify1 = () => toast("User Data Updated");
+
   const [name, setName] = useState(user.name);
   const [bio, setBio] = useState(user.bio);
 
@@ -101,6 +105,7 @@ const UserPage = ({
       dp: baseImage ? baseImage : user?.dp,
       bio: bio,
     });
+    notify1();
   };
 
   useEffect(() => {
@@ -270,6 +275,7 @@ const UserPage = ({
         {" "}
         <OtherAccounts mode={mode} />
       </div>
+      <ToastContainer />
     </div>
   );
 };
