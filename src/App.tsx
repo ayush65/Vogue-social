@@ -44,6 +44,10 @@ function App() {
     JSON.parse(localStorage.getItem("userData") || "[]")
   );
 
+  const [userPostArray, setUserPostArray] = useState<User>(
+    JSON.parse(localStorage.getItem("userPost") || "[]")
+  );
+
   return (
     <div className={mode === "dark" ? "dark-mode App " : "light-mode App"}>
       <Navbar
@@ -60,6 +64,8 @@ function App() {
         setArray={setArray}
         user={user}
         setUser={setUser}
+        userPostArray={userPostArray}
+        setUserPostArray={setUserPostArray}
       />
       <Footer mode={mode} />
     </div>

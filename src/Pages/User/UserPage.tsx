@@ -29,6 +29,8 @@ interface RoutesPathProps {
   setArray: any;
   user: any;
   setUser: any;
+  userPostArray: any;
+  setUserPostArray: any;
 }
 
 const UserPage = ({
@@ -39,8 +41,15 @@ const UserPage = ({
   setArray,
   user,
   setUser,
+  userPostArray,
+  setUserPostArray,
 }: UserDetailsProps & RoutesPathProps) => {
-  const userPost = array.filter((item: any) => item.userid === user.email);
+  console.log(array);
+
+  console.log("hi");
+  console.log(userPostArray);
+
+  console.log("hi");
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -49,7 +58,6 @@ const UserPage = ({
   };
 
   const handleCloseModal = () => {
-    console.log("nooo");
     setIsModalOpen(false);
   };
 
@@ -114,6 +122,12 @@ const UserPage = ({
     localStorage.setItem("userData", userData);
   }, [user]);
 
+  useEffect(() => {
+    const userData = JSON.stringify(userPostArray);
+
+    localStorage.setItem("userPost", userData);
+  }, [userPostArray]);
+
   if (loginState) {
     return <Navigate replace to="/login" />;
   }
@@ -163,7 +177,7 @@ const UserPage = ({
             </div>
             <div className="display-coloumn">
               <h2>Posts</h2>
-              <h3>{userPost.length}</h3>
+              <h3>{userPostArray?.length}</h3>
             </div>
             <div className="display-coloumn">
               <h2>Followers</h2>
@@ -171,7 +185,12 @@ const UserPage = ({
             </div>
           </div>
           <div className="user-post-container">
-            <PostsCard array={userPost} mode={mode} setArray={setArray} />
+            <PostsCard
+              array={userPostArray}
+              mode={mode}
+              setArray={setUserPostArray}
+              user={user}
+            />
           </div>
         </div>
       </div>

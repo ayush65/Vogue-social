@@ -42,6 +42,8 @@ interface RoutesPathProps {
   setArray: any;
   user: any;
   setUser: any;
+  setUserPostArray: any;
+  userPostArray: any;
 }
 
 function RoutesPath({
@@ -52,6 +54,8 @@ function RoutesPath({
   setArray,
   user,
   setUser,
+  userPostArray,
+  setUserPostArray,
 }: UserDetailsProps & RoutesPathProps) {
   return (
     <>
@@ -67,6 +71,8 @@ function RoutesPath({
               setArray={setArray}
               user={user}
               setUser={setUser}
+              userPostArray={userPostArray}
+              setUserPostArray={setUserPostArray}
             />
           }
         ></Route>
@@ -95,6 +101,8 @@ function RoutesPath({
               setArray={setArray}
               user={user}
               setUser={setUser}
+              userPostArray={userPostArray}
+              setUserPostArray={setUserPostArray}
             />
           }
         ></Route>
@@ -122,6 +130,8 @@ function RoutesPath({
               setArray={setArray}
               user={user}
               setUser={setUser}
+              userPostArray={userPostArray}
+              setUserPostArray={setUserPostArray}
             />
           }
         ></Route>

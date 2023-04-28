@@ -33,11 +33,19 @@ interface UserObj {
 }
 interface UserDetailsProps {
   mode: string;
-  user: any;
   loginState: boolean;
+  user: any;
+  userPostArray: any;
+  setUserPostArray: any;
 }
 
-const Posts = ({ mode, user, loginState }: UserDetailsProps) => {
+const Posts = ({
+  mode,
+  loginState,
+  user,
+  userPostArray,
+  setUserPostArray,
+}: UserDetailsProps) => {
   const [text, setText] = useState("");
   const [array, setArray] = useState<Note[]>(
     JSON.parse(localStorage.getItem("postObj") || "[]")
@@ -63,6 +71,7 @@ const Posts = ({ mode, user, loginState }: UserDetailsProps) => {
   };
 
   const handleCloseModal = () => {
+    console.log("nooo");
     setIsModalOpen(false);
   };
 
@@ -121,6 +130,12 @@ const Posts = ({ mode, user, loginState }: UserDetailsProps) => {
           console.log(newNote);
           setArray([...array, newNote]);
         }
+        console.log(array.length);
+        const userPost = array.filter(
+          (item: any) => item.userid === user.email
+        );
+
+        setUserPostArray(userPost);
 
         console.log(array);
         setText("");
@@ -154,6 +169,12 @@ const Posts = ({ mode, user, loginState }: UserDetailsProps) => {
   };
 
   useEffect(() => {
+    const postObj = JSON.stringify(userPostArray);
+
+    localStorage.setItem("userPost", postObj);
+  }, [userPostArray]);
+
+  useEffect(() => {
     const postObj = JSON.stringify(array);
 
     localStorage.setItem("postObj", postObj);
@@ -171,7 +192,7 @@ const Posts = ({ mode, user, loginState }: UserDetailsProps) => {
       >
         <h3>New Post</h3>
         <div className="post-content">
-          {loginState === false ? (
+          {user?.dp ? (
             <img src={user?.dp} className="img-class-post"></img>
           ) : (
             <img
@@ -308,7 +329,7 @@ const Posts = ({ mode, user, loginState }: UserDetailsProps) => {
           <option value="descending">Latest</option>
         </select>
       </>
-      <PostsCard array={array} setArray={setArray} mode={mode} />
+      <PostsCard array={array} setArray={setArray} mode={mode} user={user} />
       <ToastContainer />
     </div>
   );

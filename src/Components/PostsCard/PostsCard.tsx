@@ -41,21 +41,18 @@ interface Props {
   array: any;
   setArray: any;
   mode: string;
+  user: any;
 }
 
 type LoginState = boolean;
 
-const PostsCard = ({ array, setArray, mode }: Props) => {
+const PostsCard = ({ array, setArray, mode, user }: Props) => {
   const handleRemovePost = (id: number) => {
     setArray((prevPosts: Notes[]) => {
       const newPosts = prevPosts.filter((post: Notes) => post.id !== id);
       return newPosts;
     });
   };
-
-  const [user] = useState<UserObj | null>(
-    JSON.parse(localStorage.getItem("userData") || "[]")
-  );
 
   const [bookmarkArray, setBookmarkArray] = useState<Notes[]>(
     JSON.parse(localStorage.getItem("bookmarkObj") || "[]")
@@ -155,6 +152,7 @@ const PostsCard = ({ array, setArray, mode }: Props) => {
 
     localStorage.setItem("comments", commentObj);
   }, [comments]);
+
   const notify = () => toast("Added to Bookmark");
   const notify1 = () => toast("Post is already Bookmarked");
   const notify3 = () => toast("Added to Liked");

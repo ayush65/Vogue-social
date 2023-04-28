@@ -12,6 +12,8 @@ interface UserDetailsProps {
   setArray: any;
   user: any;
   setUser: any;
+  userPostArray: any;
+  setUserPostArray: any;
 }
 
 const Homepage = ({
@@ -22,6 +24,8 @@ const Homepage = ({
   setArray,
   user,
   setUser,
+  userPostArray,
+  setUserPostArray,
 }: UserDetailsProps) => {
   return (
     <div className="homepage-container">
@@ -34,7 +38,13 @@ const Homepage = ({
         user={user}
         setUser={setUser}
       />
-      <Posts mode={mode} loginState={loginState} user={user} />
+      <Posts
+        mode={mode}
+        loginState={loginState}
+        user={user}
+        userPostArray={userPostArray}
+        setUserPostArray={setUserPostArray}
+      />
       <OtherAccounts mode={mode} />
     </div>
   );

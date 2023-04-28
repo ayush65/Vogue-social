@@ -12,6 +12,8 @@ interface UserDetailsProps {
   setArray: any;
   user: any;
   setUser: any;
+  userPostArray: any;
+  setUserPostArray: any;
 }
 
 export interface Notes {
@@ -34,6 +36,8 @@ const Liked = ({
   setArray,
   user,
   setUser,
+  userPostArray,
+  setUserPostArray,
 }: UserDetailsProps) => {
   const [likedArray, setLikedArray] = useState<Notes[]>(
     JSON.parse(localStorage.getItem("likeObj") || "[]")
@@ -64,7 +68,12 @@ const Liked = ({
         <div>
           <h2 className="liked-posts">Liked Posts</h2>
           {likedArray.length === 0 && <h3>No Liked Posts yet</h3>}
-          <PostsCard array={likedArray} setArray={setLikedArray} mode={mode} />
+          <PostsCard
+            array={likedArray}
+            setArray={setLikedArray}
+            mode={mode}
+            user={user}
+          />
         </div>
 
         <div className="display-none-mobile">
