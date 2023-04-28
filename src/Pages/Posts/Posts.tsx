@@ -192,7 +192,7 @@ const Posts = ({
       >
         <h3>New Post</h3>
         <div className="post-content">
-          {user?.dp ? (
+          {loginState === false ? (
             <img src={user?.dp} className="img-class-post"></img>
           ) : (
             <img
