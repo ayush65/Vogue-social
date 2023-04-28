@@ -102,7 +102,12 @@ function RoutesPath({
         <Route
           path="/login"
           element={
-            <Login loginState={loginState} setLoginState={setLoginState} />
+            <Login
+              loginState={loginState}
+              setLoginState={setLoginState}
+              user={user}
+              setUser={setUser}
+            />
           }
         ></Route>
         <Route path="/signup" element={<Signup />}></Route>

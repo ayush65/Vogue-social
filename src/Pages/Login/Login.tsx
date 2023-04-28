@@ -13,19 +13,17 @@ export interface Notes {
 export interface Login {
   loginState: boolean;
   setLoginState: React.Dispatch<React.SetStateAction<boolean>>;
+  user: any;
+  setUser: any;
 }
 
-function Login({ loginState, setLoginState }: Login) {
+function Login({ loginState, setLoginState, user, setUser }: Login) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
   const [userArray, setUserArray] = useState<Notes[]>(
     JSON.parse(localStorage.getItem("userObj") || "[]")
-  );
-
-  const [user, setUser] = useState<Notes>(
-    JSON.parse(localStorage.getItem("userData") || "[]")
   );
 
   const handleLogin = (e: any) => {
@@ -38,17 +36,16 @@ function Login({ loginState, setLoginState }: Login) {
     if (currentUser) {
       setUser(currentUser);
     }
-    console.log("boom");
     console.log(user);
     if (currentUser) {
       if (currentUser.password === password) {
-        console.log(user);
-        setUser((prevUser) => ({
+        setUser((prevUser: any) => ({
           ...prevUser,
-          bio: "I Am A New User",
+          bio: "Hey There I am using Vogue Social",
           bg: "https://getwalls.io/wallpapers/328320/2020--07--sun-wallpaper-dp-background-for-desktop-or-mobile-phone-pc.jpg",
           dp: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png",
         }));
+        console.log(user);
         // login user
         console.log("User logged in successfully");
         setLoginState(false);

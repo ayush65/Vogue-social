@@ -23,11 +23,6 @@ const Homepage = ({
   user,
   setUser,
 }: UserDetailsProps) => {
-  console.log("killllllllllllllllllllllllllllllllllllllllll");
-
-  console.log("boommmm");
-
-  console.log(user);
   return (
     <div className="homepage-container">
       <UserDetails

@@ -10,7 +10,6 @@ export interface Notes {
   email: string;
   image: string;
   password: string;
-  following: [];
   dp: string;
   bio: string;
 }
@@ -33,29 +32,19 @@ const UserDetails = ({
   user,
   setUser,
 }: UserDetailsProps) => {
-  console.log("here");
-  console.log(user);
-  console.log("here");
   const handleLogout = () => {
     setLoginState(true);
     setUser({
       id: "",
       name: "",
-      bg: user?.bg,
+      bg: "",
       email: "",
       image: "",
       password: "",
-      following: [],
       dp: "",
       bio: user.bio,
     });
   };
-
-  useEffect(() => {
-    const LoginState = JSON.stringify(user);
-
-    localStorage.setItem("userData", LoginState);
-  }, [user]);
 
   return (
     <div>
