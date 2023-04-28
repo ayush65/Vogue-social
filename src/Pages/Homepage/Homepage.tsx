@@ -34,7 +34,7 @@ const Homepage = ({
         user={user}
         setUser={setUser}
       />
-      <Posts mode={mode} user={user} />
+      <Posts mode={mode} loginState={loginState} user={user} />
       <OtherAccounts mode={mode} />
     </div>
   );

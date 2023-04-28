@@ -34,9 +34,10 @@ interface UserObj {
 interface UserDetailsProps {
   mode: string;
   user: any;
+  loginState: boolean;
 }
 
-const Posts = ({ mode, user }: UserDetailsProps) => {
+const Posts = ({ mode, user, loginState }: UserDetailsProps) => {
   const [text, setText] = useState("");
   const [array, setArray] = useState<Note[]>(
     JSON.parse(localStorage.getItem("postObj") || "[]")
@@ -62,7 +63,6 @@ const Posts = ({ mode, user }: UserDetailsProps) => {
   };
 
   const handleCloseModal = () => {
-    console.log("nooo");
     setIsModalOpen(false);
   };
 
@@ -90,10 +90,6 @@ const Posts = ({ mode, user }: UserDetailsProps) => {
       };
     });
   };
-
-  const [loginState, setLoginState] = useState<LoginState>(
-    JSON.parse(localStorage.getItem("LoginSocial") || "true")
-  );
 
   const notify = () => toast("Please provide proper post details");
 
@@ -175,7 +171,7 @@ const Posts = ({ mode, user }: UserDetailsProps) => {
       >
         <h3>New Post</h3>
         <div className="post-content">
-          {user?.dp ? (
+          {loginState === false ? (
             <img src={user?.dp} className="img-class-post"></img>
           ) : (
             <img
