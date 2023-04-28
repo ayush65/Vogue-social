@@ -1,6 +1,6 @@
 # Vogue Social
 
-#### NOTE - This web app will not work in forced https extension or browser ie Brave browser
+
 <br>
 
 Vogue Social is a social media app for Everyone.
