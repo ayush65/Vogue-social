@@ -33,9 +33,10 @@ interface UserObj {
 }
 interface UserDetailsProps {
   mode: string;
+  user: any;
 }
 
-const Posts = ({ mode }: UserDetailsProps) => {
+const Posts = ({ mode, user }: UserDetailsProps) => {
   const [text, setText] = useState("");
   const [array, setArray] = useState<Note[]>(
     JSON.parse(localStorage.getItem("postObj") || "[]")
@@ -51,10 +52,6 @@ const Posts = ({ mode }: UserDetailsProps) => {
       setArray(sortedArray);
     }
   };
-
-  const [user] = useState<UserObj | null>(
-    JSON.parse(localStorage.getItem("userData") || "null")
-  );
 
   const [baseImage, setBaseImage] = useState<string>("");
 
